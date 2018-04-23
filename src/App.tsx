@@ -1,26 +1,3 @@
-// import * as React from 'react';
-// import './App.css';
-
-// import logo from './logo.svg';
-
-// class App extends React.Component {
-//   public render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <h1 className="App-title">Welcome to React</h1>
-//         </header>
-//         <p className="App-intro">
-//           To get started, edit <code>src/App.tsx</code> and save to reload.
-//         </p>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
 import * as React from 'react';
 import {
   Collapse,
@@ -36,6 +13,10 @@ import {
   Jumbotron,
   Button
 } from 'reactstrap';
+
+import './App.css';
+
+import logo from './logo.svg';
 
 class App extends React.Component {
   state: any;
@@ -56,7 +37,9 @@ class App extends React.Component {
     return (
       <div>
         <Navbar color="inverse" light expand="md">
-          <NavbarBrand href="/">Physicist</NavbarBrand>
+          <NavbarBrand href="/">
+            <img src={logo} className="App-logo" alt="logo" />Physicist
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
