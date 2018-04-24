@@ -13,6 +13,14 @@
   "bugs": {
     "url": "https://github.com/absa-subatomic/photon"
   },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:8080",
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  },
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts-ts start",
