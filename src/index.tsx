@@ -1,10 +1,27 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
+import { createBrowserHistory } from 'history';
+import { Router, Route, Switch } from 'react-router-dom';
+
+import * as routes from './routes';
+
 import './index.css';
+
 import registerServiceWorker from './registerServiceWorker';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);
+const hist = createBrowserHistory();
+
+ReactDOM.render(
+  <Router history={hist}>
+    <Switch>
+      {routes.indexRoutes.map((prop, key) => {
+        return <Route path={prop.path} key={key} component={prop.component} />;
+      })}
+    </Switch>
+  </Router>,
+  document.getElementById('root')
+);
+
 registerServiceWorker();
