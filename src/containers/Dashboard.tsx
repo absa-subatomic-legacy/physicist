@@ -1,66 +1,144 @@
 import * as React from 'react';
-// javascript plugin used to create scrollbars on windows
-// import PerfectScrollbar from 'perfect-scrollbar';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import {
+  Row,
+  Col,
+  Card,
+  CardHeader,
+  CardTitle,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  CardBody,
+  CardFooter
+} from 'reactstrap';
+// react plugin used to create charts
+import { Line, Bar } from 'react-chartjs-2';
+// function that returns a color based on an interval of numbers
 
-import { Header, Footer, Sidebar } from '../components';
+import { PanelHeader, Stats, CardCategory, ProjectsStats } from '../components';
 
-import * as routes from '../routes';
+import {
+  dashboardPanelChart,
+  dashboardShippedProductsChart,
+  dashboardAllProductsChart,
+  dashboard24HoursPerformanceChart
+} from '../variables/charts';
 
-// var ps;
-
-class Dashboard extends React.Component<any, any> {
-  // componentDidMount(){
-  //     if(navigator.platform.indexOf('Win') > -1){
-  //         ps = new PerfectScrollbar(this.refs.mainPanel);
-  //         document.body.classList.toggle("perfect-scrollbar-on");
-  //     }
-  // }
-  // componentWillUnmount(){
-  //     if(navigator.platform.indexOf('Win') > -1){
-  //         ps.destroy();
-  //         document.body.classList.toggle("perfect-scrollbar-on");
-  //     }
-  // }
-  // componentDidUpdate(e) {
-  //   if(e.history.action === "PUSH"){
-  //     this.refs.mainPanel.scrollTop = 0;
-  //     document.scrollingElement.scrollTop = 0;
-  //   }
-  // }
-
-  getMainPanel() {
-    return 'mainPanel';
-  }
-
+class Dashboard extends React.Component {
   render() {
     return (
-      <div className="wrapper">
-        <Sidebar {...this.props} routes={routes.dashboardRoutes} />
-        <div className="main-panel" ref={this.getMainPanel()}>
-          <Header {...this.props} />
-          <Switch>
-            {routes.dashboardRoutes.map((prop: any, key) => {
-              if (prop.collapse) {
-                return prop.views.map((prop2, key2) => {
-                  return (
-                    <Route
-                      path={prop2.path}
-                      component={prop2.component}
-                      key={key2}
+      <div>
+        <PanelHeader
+          size="lg"
+          content={
+            <Line
+              data={dashboardPanelChart.data}
+              options={dashboardPanelChart.options}
+            />
+          }
+        />
+        <div className="content">
+          <Row>
+            <Col xs={12} md={4}>
+              <Card className="card-chart">
+                <CardHeader>
+                  <CardCategory>Global States</CardCategory>
+                  <CardTitle>All Projects</CardTitle>
+                  <UncontrolledDropdown>
+                    <DropdownToggle
+                      className="btn-round btn-simple btn-icon"
+                      color="default"
+                    >
+                      <i className="fas fa-cog" />
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem>Action</DropdownItem>
+                      <DropdownItem>Another Action</DropdownItem>
+                      <DropdownItem>Something else here</DropdownItem>
+                      <DropdownItem className="text-danger">
+                        Remove data
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                </CardHeader>
+                <CardBody>
+                  <div className="chart-area">
+                    <Line
+                      data={dashboardShippedProductsChart.data}
+                      options={dashboardShippedProductsChart.options}
                     />
-                  );
-                });
-              }
-              if (prop.redirect) {
-                return <Redirect from={prop.path} to={prop.pathTo} key={key} />;
-              }
-              return (
-                <Route path={prop.path} component={prop.component} key={key} />
-              );
-            })}
-          </Switch>
-          <Footer />
+                  </div>
+                </CardBody>
+                <CardFooter>
+                  <Stats>{[{ i: 'fas fa-sync', t: 'Just Updated' }]}</Stats>
+                </CardFooter>
+              </Card>
+            </Col>
+
+            <Col xs={12} md={4}>
+              <Card className="card-chart">
+                <CardHeader>
+                  <CardCategory>2018 States</CardCategory>
+                  <CardTitle>All Teams</CardTitle>
+                  <UncontrolledDropdown>
+                    <DropdownToggle
+                      className="btn-round btn-simple btn-icon"
+                      color="default"
+                    >
+                      <i className="fas fa-cog" />
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem>Action</DropdownItem>
+                      <DropdownItem>Another Action</DropdownItem>
+                      <DropdownItem>Something else here</DropdownItem>
+                      <DropdownItem className="text-danger">
+                        Remove data
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                </CardHeader>
+                <CardBody>
+                  <div className="chart-area">
+                    <Line
+                      data={dashboardAllProductsChart.data}
+                      options={dashboardAllProductsChart.options}
+                    />
+                  </div>
+                </CardBody>
+                <CardFooter>
+                  <Stats>{[{ i: 'fas fa-sync', t: 'Just Updated' }]}</Stats>
+                </CardFooter>
+              </Card>
+            </Col>
+            <Col xs={12} md={4}>
+              <Card className="card-chart">
+                <CardHeader>
+                  <CardCategory>Email Statistics</CardCategory>
+                  <CardTitle>24 Hours Performance</CardTitle>
+                </CardHeader>
+                <CardBody>
+                  <div className="chart-area">
+                    <Bar
+                      data={dashboard24HoursPerformanceChart.data}
+                      options={dashboard24HoursPerformanceChart.options}
+                    />
+                  </div>
+                </CardBody>
+                <CardFooter>
+                  <Stats>
+                    {[{ i: 'fas fa-calendar-alt', t: 'Last 7 days' }]}
+                  </Stats>
+                </CardFooter>
+              </Card>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col xs={12} md={12}>
+              <ProjectsStats />
+            </Col>
+          </Row>
         </div>
       </div>
     );

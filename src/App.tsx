@@ -16,7 +16,7 @@ import {
 
 import Projects from './containers/Projects';
 
-import './App.css';
+// import './App.css';
 
 class App extends React.Component {
   state: any;

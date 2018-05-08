@@ -33,7 +33,7 @@ class Sidebar extends React.Component<any, any> {
 
   render() {
     return (
-      <div className="sidebar" data-color="blue">
+      <div className="sidebar" data-color="red">
         <div className="logo">
           <a href="/" className="simple-text logo-mini">
             <div className="logo-img">
@@ -63,7 +63,7 @@ class Sidebar extends React.Component<any, any> {
                     className="nav-link"
                     activeClassName="active"
                   >
-                    <i className={'now-ui-icons ' + prop.icon} />
+                    <i className={'fas ' + prop.icon} />
                     <p>{prop.name}</p>
                   </NavLink>
                 </li>

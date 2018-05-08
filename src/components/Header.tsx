@@ -1,17 +1,15 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  // Dropdown, DropdownToggle, DropdownMenu, DropdownItem,
-  Container,
-  InputGroup,
-  InputGroupAddon,
-  Input
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Container
 } from 'reactstrap';
 
 import * as routes from '../routes';
@@ -41,7 +39,7 @@ class Header extends React.Component<any, any> {
       isOpen: !this.state.isOpen
     });
   }
-  dropdownToggle(e: any) {
+  dropdownToggle() {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
@@ -148,44 +146,29 @@ class Header extends React.Component<any, any> {
             navbar
             className="justify-content-end"
           >
-            <form>
-              <InputGroup className="no-border">
-                <Input placeholder="Search..." />
-                <InputGroupAddon addonType="append">
-                  <i className="now-ui-icons ui-1_zoom-bold" />
-                </InputGroupAddon>
-              </InputGroup>
-            </form>
             <Nav navbar>
-              <NavItem>
-                <Link to="#pablo" className="nav-link">
-                  <i className="now-ui-icons media-2_sound-wave" />
-                  <p>
-                    <span className="d-lg-none d-md-block">Stats</span>
-                  </p>
-                </Link>
-              </NavItem>
-              {/* <Dropdown group isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle(e)}>
-                                <DropdownToggle caret nav>
-                                    <i className="now-ui-icons location_world"></i>
-                                    <p>
-            							<span className="d-lg-none d-md-block">Some Actions</span>
-            						</p>
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem tag="a">Action</DropdownItem>
-                                    <DropdownItem tag="a">Another Action</DropdownItem>
-                                    <DropdownItem tag="a">Something else here</DropdownItem>
-                                </DropdownMenu>
-                            </Dropdown> */}
-              <NavItem>
-                <Link to="#pablo" className="nav-link">
-                  <i className="now-ui-icons users_single-02" />
+              <Dropdown
+                nav
+                isOpen={this.state.dropdownOpen}
+                toggle={this.dropdownToggle}
+              >
+                <DropdownToggle nav caret>
+                  <i className="fas fa-user fa-lg" />
                   <p>
                     <span className="d-lg-none d-md-block">Account</span>
                   </p>
-                </Link>
-              </NavItem>
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem header>Account</DropdownItem>
+                  <DropdownItem>
+                    <i className="fas fa-sign-in-alt" />Login
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem disabled>
+                    <i className="fas fa-sign-out-alt" />Logout
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
             </Nav>
           </Collapse>
         </Container>

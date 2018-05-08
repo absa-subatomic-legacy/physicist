@@ -5,11 +5,11 @@ import { Router, Route, Switch } from 'react-router-dom';
 
 import * as routes from './routes';
 
-import './index.css';
-
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import './assets/scss/physicist.css';
+import './assets/css/demo.css';
 
 const hist = createBrowserHistory();
 
@@ -24,4 +24,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-registerServiceWorker();
+// registerServiceWorker();

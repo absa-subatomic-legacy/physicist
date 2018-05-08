@@ -10,34 +10,14 @@ class Footer extends React.Component<any, any> {
         className={'footer' + (this.props.default ? ' footer-default' : '')}
       >
         <Container fluid={this.props.fluid ? true : false}>
-          <nav>
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">Creative Tim</a>
-              </li>
-              <li>
-                <a href="https://presentation.creative-tim.com">About Us</a>
-              </li>
-              <li>
-                <a href="https://blog.creative-tim.com">Blog</a>
-              </li>
-            </ul>
-          </nav>
           <div className="copyright">
-            &copy; {1900 + new Date().getFullYear()}, Designed by
+            &copy; {2018}, Designed and Coded by &nbsp;
             <a
-              href="https://www.invisionapp.com"
+              href="https://github.com/orgs/absa-subatomic"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Invision
-            </a>. Coded by{' '}
-            <a
-              href="https://www.creative-tim.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Creative Tim
+              Subatomic
             </a>.
           </div>
         </Container>

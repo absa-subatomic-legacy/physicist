@@ -1,0 +1,30 @@
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+// Plugins CSS
+@import "bootstrap/plugins/plugin-react-bootstrap-switch";
+@import "bootstrap/plugins/plugin-animate-bootstrap-notify";
+@import "bootstrap/plugins/plugin-bootstrap-switch";
+@import "bootstrap/plugins/plugin-perfect-scrollbar";
+
+// Core CSS
+@import "bootstrap/buttons";
+@import "bootstrap/inputs";
+@import "bootstrap/typography";
+@import "bootstrap/misc";
+@import "bootstrap/checkboxes-radio";
+
+// components
+@import "bootstrap/navbar";
+@import "bootstrap/dropdown";
+@import "bootstrap/alerts";
+@import "bootstrap/images";
+@import "bootstrap/nucleo-outline";
+@import "bootstrap/tables";
+@import "bootstrap/sidebar-and-main-panel";
+@import "bootstrap/cards";
+@import "bootstrap/footers";
+@import "bootstrap/fixed-plugin";
+@import "bootstrap/sections";
+
+@import "bootstrap/responsive";
