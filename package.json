@@ -27,7 +27,9 @@
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "test-ci": "CI=true yarn run test --coverage",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@types/reactstrap": "^5.0.21",
@@ -54,6 +56,7 @@
     "@types/react-router-redux": "^5.0.11",
     "@types/react-test-renderer": "^16.0.0",
     "@types/redux-mock-store": "^0.0.13",
+    "cypress": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.14.3",

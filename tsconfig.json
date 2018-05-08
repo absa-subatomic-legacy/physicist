@@ -18,7 +18,8 @@
     "noUnusedLocals": true,
     "baseUrl": "/",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",
