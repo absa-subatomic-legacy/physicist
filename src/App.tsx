@@ -14,9 +14,9 @@ import {
   Button
 } from 'reactstrap';
 
-import './App.css';
+import Projects from './containers/Projects';
 
-import logo from './logo.svg';
+import './App.css';
 
 class App extends React.Component {
   state: any;
@@ -37,9 +37,7 @@ class App extends React.Component {
     return (
       <div>
         <Navbar color="inverse" light expand="md">
-          <NavbarBrand href="/">
-            <img src={logo} className="App-logo" alt="logo" />Physicist
-          </NavbarBrand>
+          <NavbarBrand href="/">Physicist</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -55,7 +53,7 @@ class App extends React.Component {
           <Container>
             <Row>
               <Col>
-                <h1>Welcome to React</h1>
+                <h1>Welcome to Physicist</h1>
                 <p>
                   <Button
                     tag="a"
@@ -71,6 +69,11 @@ class App extends React.Component {
             </Row>
           </Container>
         </Jumbotron>
+        <Container>
+          <Row>
+            <Projects />
+          </Row>
+        </Container>
       </div>
     );
   }
