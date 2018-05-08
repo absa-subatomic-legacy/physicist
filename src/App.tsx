@@ -43,7 +43,7 @@ class App extends React.Component {
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="https://github.com/absa-subatomic/physicist">
-                  Github
+                  GitHub
                 </NavLink>
               </NavItem>
             </Nav>
