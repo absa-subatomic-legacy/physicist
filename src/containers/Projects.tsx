@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { createClient } from 'hal-rest-client';
-import { ListGroup } from 'reactstrap';
+import { Row, Col, CardDeck } from 'reactstrap';
+
+import { PanelHeader, ProjectCard } from '../components';
 
 import { ProjectEntity, ProjectEntities } from '../models/Project';
-
-import ProjectCard from '../components/ProjectCard';
 
 interface ProjectEntitiesState {
   projects: ProjectEntity[];
@@ -43,7 +43,18 @@ class Projects extends React.Component<any, ProjectEntitiesState> {
   }
 
   render() {
-    return <ListGroup>{this.renderProjects()}</ListGroup>;
+    return (
+      <div>
+        <PanelHeader size="sm" />
+        <div className="content">
+          <Row>
+            <Col xs={12}>
+              <CardDeck>{this.renderProjects()}</CardDeck>
+            </Col>
+          </Row>
+        </div>
+      </div>
+    );
   }
 }
 
