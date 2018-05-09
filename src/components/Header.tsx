@@ -25,6 +25,7 @@ class Header extends React.Component<any, any> {
     this.toggle = this.toggle.bind(this);
     this.dropdownToggle = this.dropdownToggle.bind(this);
   }
+
   toggle() {
     if (this.state.isOpen) {
       this.setState({
@@ -39,11 +40,13 @@ class Header extends React.Component<any, any> {
       isOpen: !this.state.isOpen
     });
   }
+
   dropdownToggle() {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
   }
+
   getBrand() {
     var name;
     routes.dashboardRoutes.map((prop: any, key) => {
@@ -69,10 +72,12 @@ class Header extends React.Component<any, any> {
     });
     return name;
   }
+
   openSidebar() {
     document.documentElement.classList.toggle('nav-open');
     (this.refs.sidebarToggle as any).classList.toggle('toggled');
   }
+
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)
   updateColor() {
     if (window.innerWidth < 993 && this.state.isOpen) {
@@ -85,9 +90,11 @@ class Header extends React.Component<any, any> {
       });
     }
   }
+
   componentDidMount() {
     window.addEventListener('resize', this.updateColor.bind(this));
   }
+
   componentDidUpdate(e: any) {
     if (
       window.innerWidth < 993 &&

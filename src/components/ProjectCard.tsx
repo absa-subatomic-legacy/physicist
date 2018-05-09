@@ -22,7 +22,7 @@ class ProjectCard extends React.Component<Project, any> {
   }
 
   onViewButtonClick(): void {
-    alert(`Click on ${this.props.projectId}`);
+    alert(`View project with ${this.props.projectId}`);
   }
 
   render() {
@@ -38,8 +38,10 @@ class ProjectCard extends React.Component<Project, any> {
               <i className="fas fa-cog" />
             </DropdownToggle>
             <DropdownMenu right>
-              <DropdownItem>Action</DropdownItem>
-              <DropdownItem>Another Action</DropdownItem>
+              <DropdownItem onClick={() => this.onViewButtonClick()}>
+                View
+              </DropdownItem>
+              <DropdownItem>Empty Action</DropdownItem>
               <DropdownItem>Something else here</DropdownItem>
               <DropdownItem className="text-danger">Remove data</DropdownItem>
             </DropdownMenu>

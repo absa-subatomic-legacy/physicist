@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { Container } from 'reactstrap';
-// used for making the prop types of this component
-// import PropTypes from 'prop-types';
 
 class Footer extends React.Component<any, any> {
   render() {
