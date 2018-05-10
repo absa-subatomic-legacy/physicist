@@ -8,7 +8,42 @@ class Programmes extends React.Component<any, any> {
     super(props);
     this.state = {
       collapse: 0,
-      cards: ['Infrastructure', 'DebiCheck', 'Pangea', 'Morongwa', 'Fortriss']
+      cards: [
+        {
+          name: 'Infrastructure',
+          projects: [
+            {
+              id: 1,
+              name: 'Bitbucket',
+              pods: [
+                {
+                  id: 1,
+                  name: 'scdf'
+                },
+                {
+                  id: 2,
+                  name: 'config server'
+                }
+              ]
+            },
+            {
+              id: 2,
+              name: 'Nexus'
+            }
+          ]
+        },
+        {
+          name: 'DebiCheck',
+          projects: [
+            {
+              name: 'CMS'
+            },
+            {
+              name: 'RMS'
+            }
+          ]
+        }
+      ]
     };
   }
 
