@@ -16,13 +16,7 @@ export const Accordion = (props: any) => {
         </CardHeader>
         <Collapse isOpen={props.collapse === index + 1}>
           <CardBody>
-            {props.cards[index].projects.map(item => {
-              return (
-                <span key={item.id}>
-                  <SubProject name={item.name} status="Up" />
-                </span>
-              );
-            })}
+            <SubProject projects={card.projects} />
           </CardBody>
         </Collapse>
       </Card>

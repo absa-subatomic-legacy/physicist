@@ -15,6 +15,7 @@ class Programmes extends React.Component<any, any> {
             {
               id: 1,
               name: 'Bitbucket',
+              status: 'Up',
               pods: [
                 {
                   id: 1,
@@ -28,7 +29,18 @@ class Programmes extends React.Component<any, any> {
             },
             {
               id: 2,
-              name: 'Nexus'
+              name: 'Nexus',
+              status: 'Up',
+              pods: [
+                {
+                  id: 1,
+                  name: 'scdf'
+                },
+                {
+                  id: 2,
+                  name: 'config server'
+                }
+              ]
             }
           ]
         },
@@ -36,10 +48,60 @@ class Programmes extends React.Component<any, any> {
           name: 'DebiCheck',
           projects: [
             {
-              name: 'CMS'
+              name: 'CMS',
+              status: 'Up',
+              pods: [
+                {
+                  id: 1,
+                  name: 'scdf'
+                },
+                {
+                  id: 2,
+                  name: 'config server'
+                }
+              ]
             },
             {
-              name: 'RMS'
+              name: 'RMS',
+              status: 'Up',
+              pods: [
+                {
+                  id: 1,
+                  name: 'scdf'
+                },
+                {
+                  id: 2,
+                  name: 'config server'
+                }
+              ]
+            },
+            {
+              name: 'Post-Payments',
+              status: 'Up',
+              pods: [
+                {
+                  id: 1,
+                  name: 'scdf'
+                },
+                {
+                  id: 2,
+                  name: 'config server'
+                }
+              ]
+            },
+            {
+              name: 'Batch',
+              status: 'Up',
+              pods: [
+                {
+                  id: 1,
+                  name: 'scdf'
+                },
+                {
+                  id: 2,
+                  name: 'config server'
+                }
+              ]
             }
           ]
         }
