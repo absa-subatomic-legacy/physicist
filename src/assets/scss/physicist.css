@@ -2911,7 +2911,8 @@ a[data-toggle='collapse'][aria-expanded='true'] .caret,
   position: relative;
 }
 .alert.alert-success {
-  background-color: #1be611;
+  background-color: #d4edda;
+  color: #155724;
 }
 .alert.alert-danger {
   background-color: #ff5050;
@@ -3692,6 +3693,15 @@ img {
   background: linear-gradient(160deg, #2c2c2c 0%, #1f1f1f 100%);
   background-size: 105%;
 }
+
+.panel-header-xs {
+  height: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: relative;
+  margin-bottom: 60px;
+}
+
 .panel-header .header .title {
   color: #ffffff;
 }

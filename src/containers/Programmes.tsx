@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { PanelHeader } from '../components';
-import { Accordion } from '../components/Accordion';
+import { Programme } from '../components/Programmes/Programme';
 
 class Programmes extends React.Component<any, any> {
   constructor(props: any) {
@@ -16,16 +16,7 @@ class Programmes extends React.Component<any, any> {
               id: 1,
               name: 'Bitbucket',
               status: 'Up',
-              pods: [
-                {
-                  id: 1,
-                  name: 'scdf'
-                },
-                {
-                  id: 2,
-                  name: 'config server'
-                }
-              ]
+              pods: []
             },
             {
               id: 2,
@@ -120,9 +111,9 @@ class Programmes extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <PanelHeader size="sm" />
+        <PanelHeader size="xs" />
         <div className="content">
-          <Accordion
+          <Programme
             cards={this.state.cards}
             toggle={this.toggleEventHandler}
             collapse={this.state.collapse}
