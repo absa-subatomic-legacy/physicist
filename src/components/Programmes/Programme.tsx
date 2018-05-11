@@ -14,13 +14,7 @@ export const Programme = (props: any) => {
         onClick={props.toggle}
       >
         <Alert color="success">
-          <CardHeader
-            style={{
-              fontWeight: 'bold',
-              fontSize: '18px'
-            }}
-            data-event={index + 1}
-          >
+          <CardHeader className="project-" data-event={index + 1}>
             {program.name} <span className="fas fa-check" />
           </CardHeader>
         </Alert>

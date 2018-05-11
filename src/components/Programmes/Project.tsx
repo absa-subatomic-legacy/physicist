@@ -7,8 +7,8 @@ export const Project = props => {
   const projects = props.projects.map((item, index) => {
     return (
       <span key={item.id}>
-        <Card className="programme-card">
-          <CardHeader className="programme-card-header">{item.name}</CardHeader>
+        <Card className="project-card">
+          <CardHeader className="project-card-header">{item.name}</CardHeader>
           <CardBody>
             {props.projects[index].pods.map(pod => {
               return (

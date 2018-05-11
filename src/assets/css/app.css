@@ -66,10 +66,15 @@
   border: 1px solid;
 }
 
-.programme-card-header {
+.project-card-header {
   font-size: 16px;
 }
 
-.programme-card {
+.project-card {
   border-left: 5px solid #155724;
+}
+
+.programe-card {
+  font-weight: 'bold';
+  font-size: '18px';
 }
