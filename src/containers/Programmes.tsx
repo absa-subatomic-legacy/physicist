@@ -8,7 +8,7 @@ class Programmes extends React.Component<any, any> {
     super(props);
     this.state = {
       collapse: 0,
-      cards: [
+      programmes: [
         {
           name: 'Infrastructure',
           projects: [
@@ -114,7 +114,7 @@ class Programmes extends React.Component<any, any> {
         <PanelHeader size="xs" />
         <div className="content">
           <Programme
-            cards={this.state.cards}
+            programmes={this.state.programmes}
             toggle={this.toggleEventHandler}
             collapse={this.state.collapse}
           />

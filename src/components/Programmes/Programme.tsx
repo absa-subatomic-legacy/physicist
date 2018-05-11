@@ -5,7 +5,7 @@ import { Alert } from 'reactstrap';
 import Project from './Project';
 
 export const Programme = (props: any) => {
-  const cards = props.cards.map((card, index) => {
+  const programmes = props.programmes.map((program, index) => {
     return (
       <Card
         className="status-task"
@@ -21,17 +21,17 @@ export const Programme = (props: any) => {
             }}
             data-event={index + 1}
           >
-            {card.name} <span className="fas fa-check" />
+            {program.name} <span className="fas fa-check" />
           </CardHeader>
         </Alert>
         <Collapse isOpen={props.collapse === index + 1}>
           <CardBody>
-            <Project projects={card.projects} />
+            <Project projects={program.projects} />
           </CardBody>
         </Collapse>
       </Card>
     );
   });
-  return <div>{cards}</div>;
+  return <div>{programmes}</div>;
 };
 export default Programme;
