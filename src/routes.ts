@@ -25,9 +25,6 @@ export var dashboardRoutes = [
     component: Programmes
   },
 
-  // Add other routes here
-  // ...
   // That redirect route must be the last one
-  { redirect: true, path: '/', pathTo: '/dashboard', name: 'Dashboard' },
-  { redirect: true, path: '/', pathTo: '/status', name: 'Programmes' }
+  { redirect: true, path: '/', pathTo: '/dashboard', name: 'Dashboard' }
 ];
