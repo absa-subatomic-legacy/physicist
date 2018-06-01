@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@types/reactstrap": "^5.0.21",
-    "bootstrap": "4.0.0",
+    "bootstrap": "4.1.1",
     "chart.js": "^2.7.2",
     "hal-rest-client": "^0.3.4",
     "node-sass-chokidar": "^1.2.2",
