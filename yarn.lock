@@ -6707,9 +6707,9 @@ sauce-connect-launcher@^1.2.2:
     lodash "^4.16.6"
     rimraf "^2.5.4"
 
-saucie@^3.3.0:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/saucie/-/saucie-3.3.1.tgz#09817159443293556b956df0b00ba6cc4bbc0a5d"
+saucie@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/saucie/-/saucie-3.3.2.tgz#26994ffeaecfbeeff97ebee4687c180da68f136c"
   dependencies:
     bluebird "^3.1.1"
     commander "^2.9.0"
