@@ -61,11 +61,6 @@
   color: #ffffff;
 }
 
-.status-task {
-  cursor: pointer;
-  border: 1px solid;
-}
-
 .project-card-header {
   font-size: 16px;
 }
@@ -77,4 +72,35 @@
 .programe-card {
   font-weight: 'bold';
   font-size: '18px';
+}
+
+.project-block,
+.programme-block-header {
+  border: 1px solid;
+  border-style: solid;
+  border-color: #eceef1;
+  padding: 1.1rem 1.25rem 1rem;
+}
+
+.programme-block-header {
+  font-weight: bold;
+}
+
+.programme-block {
+  padding-bottom: 25px;
+}
+
+.operational {
+  color: #92c26f;
+}
+
+.non-operational {
+  color: rgb(231, 76, 60);
+}
+
+.status-time-line {
+  margin: 0;
+  padding: 0;
+  height: 34px;
+  width: 100%;
 }

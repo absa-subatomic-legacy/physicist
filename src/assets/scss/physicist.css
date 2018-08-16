@@ -3581,7 +3581,7 @@ img {
 }
 .sidebar[data-color='red']:after,
 .off-canvas-sidebar[data-color='red']:after {
-  background: #ff3636;
+  background: grey;
 }
 .sidebar[data-color='red'] .nav li.active > a:not([data-toggle='collapse']),
 .off-canvas-sidebar[data-color='red']
@@ -3644,7 +3644,7 @@ img {
   float: right;
   width: calc(100% - 260px);
   background-color: #e3e3e3;
-  background-color: #ebecf1;
+  background-color: white;
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -4947,4 +4947,26 @@ img {
   .page-header .container h6.category-absolute {
     width: 90%;
   }
+}
+
+.ops-status {
+  font-weight: 500;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 70px;
+  padding: 0.75rem 1.25rem;
+  color: white;
+}
+
+.ops-active {
+  background-color: #92c26f;
+}
+
+.ops-inactive {
+  background: rgb(231, 76, 60);
 }

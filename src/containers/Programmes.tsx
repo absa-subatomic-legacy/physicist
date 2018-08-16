@@ -1,11 +1,24 @@
 import * as React from 'react';
 
 import { PanelHeader } from '../components';
-import { Programme } from '../components/Programmes/Programme';
+// import { Programme } from '../components/Programmes/Programme';
+
+import { ProgrammeStatus } from '../components/Programmes/ProgramStatus';
 
 class Programmes extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
+
+    let programmeData: any[] = [];
+    for (let i = 0; i < 90; i++) {
+      let dayInfo = {
+        status: 'up',
+        type: 'normal', // major / minor
+        message: '10 min downtown'
+      };
+      programmeData.push(dayInfo);
+    }
+
     this.state = {
       collapse: 0,
       programmes: [
@@ -96,7 +109,8 @@ class Programmes extends React.Component<any, any> {
             }
           ]
         }
-      ]
+      ],
+      programmeData
     };
   }
 
@@ -113,11 +127,16 @@ class Programmes extends React.Component<any, any> {
       <div>
         <PanelHeader size="xs" />
         <div className="content">
-          <Programme
+          <ProgrammeStatus
+            programmes={this.state.programmes}
+            programmeData={this.state.programmeData}
+            toggle={this.toggleEventHandler}
+          />
+          {/* <Programme
             programmes={this.state.programmes}
             toggle={this.toggleEventHandler}
             collapse={this.state.collapse}
-          />
+          /> */}
         </div>
       </div>
     );
