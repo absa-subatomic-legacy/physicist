@@ -1,48 +1,75 @@
 import * as React from 'react';
 
+import { OperationalStatus } from '../components/Programmes/OperationalStatus';
+import { Programme } from '../components/Programmes/Programme';
 import { PanelHeader } from '../components';
-// import { Programme } from '../components/Programmes/Programme';
 
-import { ProgrammeStatus } from '../components/Programmes/ProgramStatus';
+import * as moment from 'moment';
+// // import { Programme } from '../components/Programmes/Programme';
+
+// import { ProgrammeStatus } from '../components/Programmes/ProgramStatus';
 
 class Programmes extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
 
-    let programmeData: any[] = [];
-    for (let i = 0; i < 90; i++) {
-      let dayInfo = {
-        status: 'up',
-        type: 'normal', // major / minor
-        message: '10 min downtown'
-      };
-      programmeData.push(dayInfo);
-    }
-
     this.state = {
-      collapse: 0,
+      systemsOperational: true,
+      daysToShow: this.calculateDaysToShow('01 Jan 2018'),
       programmes: [
         {
           name: 'Infrastructure',
+          operational: true,
+          timeFrame: 30,
           projects: [
             {
               id: 1,
-              name: 'Bitbucket',
-              status: 'Up',
-              pods: []
+              name: 'Nexus',
+              operational: true,
+              status: [
+                {
+                  date: '10 Aug 2018 08:45',
+                  type: 'minor',
+                  message: '20 minutes of downtime'
+                },
+                {
+                  date: '14 Aug 2018 10:41',
+                  type: 'major',
+                  message: '2 hours of downtime'
+                }
+              ]
             },
             {
               id: 2,
-              name: 'Nexus',
-              status: 'Up',
-              pods: [
+              name: 'BitBucket',
+              operational: true,
+              status: [
                 {
-                  id: 1,
-                  name: 'scdf'
+                  date: '30 May 2018 12:05',
+                  type: 'minor',
+                  message: '12 minutes of downtime'
                 },
                 {
-                  id: 2,
-                  name: 'config server'
+                  date: '8 July 2018 14:36',
+                  type: 'minor',
+                  message: '5 minutes of downtime'
+                }
+              ]
+            },
+            {
+              id: 2,
+              name: 'Openshift Non Prod A',
+              operational: true,
+              status: [
+                {
+                  date: '3 July 2018 12:05',
+                  type: 'minor',
+                  message: '10 minutes of downtime'
+                },
+                {
+                  date: '4 July 2018 14:36',
+                  type: 'major',
+                  message: '4 minutes of downtime'
                 }
               ]
             }
@@ -50,76 +77,65 @@ class Programmes extends React.Component<any, any> {
         },
         {
           name: 'DebiCheck',
+          operational: true,
           projects: [
             {
+              id: 1,
               name: 'CMS',
-              status: 'Up',
-              pods: [
+              operational: true,
+              status: [
                 {
-                  id: 1,
-                  name: 'scdf'
+                  date: '10 Aug 2018 08:45',
+                  status: 'down'
                 },
                 {
-                  id: 2,
-                  name: 'config server'
+                  date: '14 Aug 2018 10:41',
+                  status: 'down'
                 }
               ]
             },
             {
-              name: 'RMS',
-              status: 'Up',
-              pods: [
+              id: 2,
+              name: 'Post Payments',
+              operational: true,
+              status: [
                 {
-                  id: 1,
-                  name: 'scdf'
+                  date: '3 Aug 2018 12:05',
+                  status: 'down'
                 },
                 {
-                  id: 2,
-                  name: 'config server'
+                  date: '7 Aug 2018 14:36',
+                  status: 'down'
                 }
               ]
             },
             {
-              name: 'Post-Payments',
-              status: 'Up',
-              pods: [
+              id: 3,
+              name: 'Openshift Non Prod A',
+              status: [
                 {
-                  id: 1,
-                  name: 'scdf'
+                  date: '3 Aug 2018 12:05',
+                  status: 'up'
                 },
                 {
-                  id: 2,
-                  name: 'config server'
-                }
-              ]
-            },
-            {
-              name: 'Batch',
-              status: 'Up',
-              pods: [
-                {
-                  id: 1,
-                  name: 'scdf'
-                },
-                {
-                  id: 2,
-                  name: 'config server'
+                  date: '17 Aug 2018 14:36',
+                  status: 'up'
                 }
               ]
             }
           ]
         }
-      ],
-      programmeData
+      ]
     };
   }
 
-  toggleEventHandler = (e: any) => {
-    let event = e.target.dataset.event;
-    this.setState({
-      collapse: this.state.collapse === Number(event) ? 0 : Number(event)
-    });
-    // tslint:disable-next-line:semicolon
+  calculateDaysToShow = startDate => {
+    let daysCalculated = moment().diff(startDate, 'days');
+    if (daysCalculated < 90) {
+      return daysCalculated;
+    } else {
+      return 90;
+    }
   };
 
   render() {
@@ -127,16 +143,13 @@ class Programmes extends React.Component<any, any> {
       <div>
         <PanelHeader size="xs" />
         <div className="content">
-          <ProgrammeStatus
-            programmes={this.state.programmes}
-            programmeData={this.state.programmeData}
-            toggle={this.toggleEventHandler}
+          <OperationalStatus
+            systemsOperational={this.state.systemsOperational}
           />
-          {/* <Programme
+          <Programme
             programmes={this.state.programmes}
-            toggle={this.toggleEventHandler}
-            collapse={this.state.collapse}
-          /> */}
+            daysToShow={this.state.daysToShow}
+          />
         </div>
       </div>
     );

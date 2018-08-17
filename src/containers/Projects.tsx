@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { createClient } from 'hal-rest-client';
+import { createClient } from 'hal-rest-client/dist';
 import { Row, Col, CardDeck } from 'reactstrap';
 
 import { PanelHeader, ProjectCard } from '../components';

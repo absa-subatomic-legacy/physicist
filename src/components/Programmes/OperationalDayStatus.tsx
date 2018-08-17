@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import Aux from '../../hoc/Aux';
+import DayStatus from './DayStatus';
+import { TimeLegend } from './TimeLegend';
 
 import * as moment from 'moment';
-import DayStatus from './DayStatus';
 
 export const OperationalDayStatus = props => {
   let statusList: any[] = [];
@@ -25,7 +25,6 @@ export const OperationalDayStatus = props => {
         moment(dayStatus.date).isSame(statusDate, 'month') &&
         moment(dayStatus.date).isSame(statusDate, 'day')
       ) {
-        debugger;
         dayInfo.status = 'down';
         dayInfo.type = dayStatus.type;
         dayInfo.message = dayStatus.message;
@@ -47,6 +46,13 @@ export const OperationalDayStatus = props => {
     );
   });
 
-  return <Aux>{dayData}</Aux>;
+  return (
+    <div className="dayInfo">
+      <div className="dayData">{dayData}</div>
+      <div className="timeLegend">
+        <TimeLegend daysToShow={props.daysToShow} />
+      </div>
+    </div>
+  );
 };
 export default OperationalDayStatus;

@@ -2,8 +2,6 @@ import * as React from 'react';
 
 import Aux from '../../hoc/Aux';
 
-// import { Tooltip } from 'reactstrap';
-
 class DayStatus extends React.Component<any, any> {
   render() {
     let tooltipMessage =
@@ -14,7 +12,7 @@ class DayStatus extends React.Component<any, any> {
     let x = tooltipMessage.toString();
 
     return (
-      <Aux>
+      <Aux className="">
         <div
           key={this.props.date}
           data-tooltip={x}

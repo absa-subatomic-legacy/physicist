@@ -1,29 +1,25 @@
 import * as React from 'react';
-import { CardBody, Card, CardHeader } from 'reactstrap';
+import { OperationalDayStatus } from './OperationalDayStatus';
 
-import { Pod } from './Pod';
-
-export const Project = props => {
-  const projects = props.projects.map((item, index) => {
+export const ProjectMain = (props: any) => {
+  const programmes = props.projects.map((project, index) => {
+    let operationalMessage = project.operational ? (
+      <span className="float-right operational ">Operational</span>
+    ) : (
+      <span className="float-right non-operational">Not Operational</span>
+    );
     return (
-      <span key={item.id}>
-        <Card className="project-card">
-          <CardHeader className="project-card-header">{item.name}</CardHeader>
-          <CardBody>
-            {props.projects[index].pods.map(pod => {
-              return (
-                <span key={index + pod.id}>
-                  <Pod name={pod.name} status="Up" />
-                </span>
-              );
-            })}
-          </CardBody>
-        </Card>
-      </span>
+      <div className="project-block" key={index + 1}>
+        <div className="project-name">
+          {project.name} {operationalMessage}
+        </div>
+        <OperationalDayStatus
+          status={project.status}
+          daysToShow={props.daysToShow}
+        />
+      </div>
     );
   });
-
-  return <span>{projects}</span>;
+  return <div>{programmes}</div>;
 };
-
-export default Project;
+export default ProjectMain;

@@ -1,9 +1,8 @@
 import App from './containers/App';
 // import Dashboard from './containers/Dashboard';
 import Projects from './containers/Projects';
-import Programmes from './containers/Programmes';
 
-import ProgrammesMain from './containers/ProgrammesMain';
+import Programmes from './containers/Programmes';
 
 export var indexRoutes = [{ path: '/', name: 'Home', component: App }];
 
@@ -15,12 +14,6 @@ export var dashboardRoutes = [
   //   component: Dashboard
   // },
   {
-    path: '/programmes',
-    name: 'programmes',
-    icon: 'fa-boxes',
-    component: Programmes
-  },
-  {
     path: '/projects',
     name: 'Projects',
     icon: 'fa-boxes',
@@ -30,7 +23,7 @@ export var dashboardRoutes = [
     path: '/status',
     name: 'Status',
     icon: 'fa-battery-half',
-    component: ProgrammesMain
+    component: Programmes
   },
 
   // Add other routes here

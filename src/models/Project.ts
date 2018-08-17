@@ -1,4 +1,4 @@
-import { HalResource, HalProperty } from 'hal-rest-client';
+import { HalResource, HalProperty } from 'hal-rest-client/dist';
 
 /**
  * The Project interface defines properties of instance

@@ -12,7 +12,7 @@ import {
   DropdownItem
 } from 'reactstrap';
 
-import { Stats } from '../components';
+import { Stats } from '.';
 
 import { Project } from '../models/Project';
 

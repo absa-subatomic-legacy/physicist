@@ -8,7 +8,7 @@ import {
   CardFooter
 } from 'reactstrap';
 
-import { Stats } from '../components';
+import { Stats } from '.';
 
 class ProjectsStats extends React.Component<any, any> {
   render() {
