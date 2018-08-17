@@ -10,9 +10,13 @@ export const ProjectMain = (props: any) => {
     );
     return (
       <div className="project-block" key={index + 1}>
-        {project.name}
-        {operationalMessage}
-        <OperationalDayStatus status={project.status} />
+        <div className="project-name">
+          {project.name} {operationalMessage}
+        </div>
+        <OperationalDayStatus
+          status={project.status}
+          daysToShow={props.daysToShow}
+        />
       </div>
     );
   });

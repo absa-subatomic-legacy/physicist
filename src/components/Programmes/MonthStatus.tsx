@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import Aux from '../../hoc/Aux';
-import { DayStatus } from './DayStatus';
+import DayStatus from './DayStatus';
 
 export const MonthStatus = props => {
   const dayData = props.programmeData.map((program, index) => {

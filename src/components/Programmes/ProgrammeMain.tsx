@@ -18,7 +18,10 @@ export const ProgrammeMain = (props: any) => {
 
         <Collapse isOpen={true}>
           <div>
-            <ProjectMain projects={program.projects} />
+            <ProjectMain
+              projects={program.projects}
+              daysToShow={props.daysToShow}
+            />
           </div>
         </Collapse>
       </div>

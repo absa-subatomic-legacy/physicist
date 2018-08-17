@@ -12,6 +12,7 @@ class ProgrammesMain extends React.Component<any, any> {
     super(props);
 
     this.state = {
+      daysToShow: 90,
       programmes: [
         {
           name: 'Infrastructure',
@@ -25,11 +26,13 @@ class ProgrammesMain extends React.Component<any, any> {
               status: [
                 {
                   date: '10 Aug 2018 08:45',
-                  status: 'down'
+                  type: 'minor',
+                  message: '20 minutes of downtime'
                 },
                 {
                   date: '14 Aug 2018 10:41',
-                  status: 'down'
+                  type: 'major',
+                  message: '2 hours of downtime'
                 }
               ]
             },
@@ -39,12 +42,14 @@ class ProgrammesMain extends React.Component<any, any> {
               operational: true,
               status: [
                 {
-                  date: '3 Aug 2018 12:05',
-                  status: 'down'
+                  date: '30 May 2018 12:05',
+                  type: 'minor',
+                  message: '12 minutes of downtime'
                 },
                 {
-                  date: '7 Aug 2018 14:36',
-                  status: 'down'
+                  date: '8 July 2018 14:36',
+                  type: 'minor',
+                  message: '5 minutes of downtime'
                 }
               ]
             },
@@ -54,12 +59,14 @@ class ProgrammesMain extends React.Component<any, any> {
               operational: true,
               status: [
                 {
-                  date: '3 Aug 2018 12:05',
-                  status: 'up'
+                  date: '3 July 2018 12:05',
+                  type: 'minor',
+                  message: '10 minutes of downtime'
                 },
                 {
-                  date: '7 Aug 2018 14:36',
-                  status: 'up'
+                  date: '4 July 2018 14:36',
+                  type: 'major',
+                  message: '4 minutes of downtime'
                 }
               ]
             }
@@ -72,6 +79,7 @@ class ProgrammesMain extends React.Component<any, any> {
             {
               id: 1,
               name: 'CMS',
+              operational: true,
               status: [
                 {
                   date: '10 Aug 2018 08:45',
@@ -86,6 +94,7 @@ class ProgrammesMain extends React.Component<any, any> {
             {
               id: 2,
               name: 'Post Payments',
+              operational: true,
               status: [
                 {
                   date: '3 Aug 2018 12:05',
@@ -106,7 +115,7 @@ class ProgrammesMain extends React.Component<any, any> {
                   status: 'up'
                 },
                 {
-                  date: '7 Aug 2018 14:36',
+                  date: '17 Aug 2018 14:36',
                   status: 'up'
                 }
               ]
@@ -126,7 +135,10 @@ class ProgrammesMain extends React.Component<any, any> {
           <OperationalStatus
             systemsOperational={this.state.systemsOperational}
           />
-          <ProgrammeMain programmes={this.state.programmes} />
+          <ProgrammeMain
+            programmes={this.state.programmes}
+            daysToShow={this.state.daysToShow}
+          />
         </div>
       </div>
     );
