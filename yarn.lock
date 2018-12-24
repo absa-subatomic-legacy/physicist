@@ -2981,9 +2981,9 @@ gzip-size@3.0.0:
   dependencies:
     duplexer "^0.1.1"
 
-hal-rest-client@^0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/hal-rest-client/-/hal-rest-client-0.3.4.tgz#0b301b973794ab0462022ff0b54736ba166ffe5d"
+hal-rest-client@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/hal-rest-client/-/hal-rest-client-0.4.1.tgz#0e5db82565f48dab7bcaf503cc90b3b13b5d649d"
   dependencies:
     axios "^0.15.3"
     reflect-metadata "^0.1.9"
@@ -4819,6 +4819,10 @@ moment@^2.10.2:
   version "2.22.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
+moment@^2.22.2:
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -6120,6 +6124,10 @@ react-error-overlay@^3.0.0:
 react-is@^16.3.2:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.3.2.tgz#f4d3d0e2f5fbb6ac46450641eb2e25bf05d36b22"
+
+react-moment@^0.7.9:
+  version "0.7.9"
+  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.7.9.tgz#fc6b5bf8952d27f134a42abfd7f42df2c839c1d7"
 
 react-popper@^0.8.3:
   version "0.8.3"
