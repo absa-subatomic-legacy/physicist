@@ -63,7 +63,7 @@
     "@types/react-router-redux": "^5.0.11",
     "@types/react-test-renderer": "^16.0.0",
     "@types/redux-mock-store": "^0.0.13",
-    "cypress": "^2.1.0",
+    "cypress": "^3.1.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.14.3",
