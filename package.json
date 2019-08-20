@@ -34,7 +34,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive"
   },
   "dependencies": {
-    "@types/reactstrap": "^5.0.21",
+    "@types/reactstrap": "^8.0.3",
     "bootstrap": "4.0.0",
     "chart.js": "^2.7.2",
     "hal-rest-client": "^0.3.4",
